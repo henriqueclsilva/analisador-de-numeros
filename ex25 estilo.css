@@ -1,0 +1,95 @@
+body {
+    background: linear-gradient(to top, #c1dfc4, #deecdd);
+    font: normal 16pt "Segoe UI", Arial, sans-serif;
+    margin: 0; /* Manter a remoção das margens padrão */
+    display: flex; /* Manter o flex para o alinhamento vertical total */
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+    min-height: 100vh; /* Ocupar toda a altura da tela */
+    flex-direction: column; /* Organizar os filhos (header, section, footer) em coluna */
+}
+
+header {
+    color: #333; /* Cor do texto mais escura */
+    text-align: center;
+    padding: 20px 0; /* Adicionar um pouco de espaço vertical */
+    margin-bottom: 30px; /* Espaço abaixo do cabeçalho */
+}
+
+section > div {
+    display: flex; /* Habilitar o layout flexbox para os filhos */
+    align-items: center; /* Alinhar os itens verticalmente ao centro */
+    gap: 10px; /* Adicionar um pequeno espaço entre os itens */
+    margin-bottom: 15px; /* Adicionar um pouco de espaço abaixo desta linha */
+    width: 100%; /* Garantir que a div ocupe a largura total da seção */
+}
+
+section > div > label { /* Estilizar o texto "Escreva seu Número..." se você o envolver em uma label */
+    white-space: nowrap; /* Evitar que o texto quebre para a próxima linha */
+}
+
+section > div > input[type="number"] {
+    flex-grow: 1; /* Permitir que a caixa de texto se expanda para ocupar o espaço restante */
+    padding: 10px; /* Reduzir um pouco o padding para caber melhor */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    min-width: 0; /* Permitir que o input fique menor se necessário */
+}
+
+section > div > input[type="button"] {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px; /* Reduzir um pouco o padding do botão */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Evitar que o texto do botão quebre */
+}
+
+section > div > input[type="button"]:hover {
+    background-color: #4cae4c;
+}
+
+select#flista {
+    width: 250px; /* Aumentar a largura da lista */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Bordas arredondadas para a lista */
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+div#res {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center; /* Centralizar o texto dentro da div */
+    max-width: 500px; /* Definir uma largura máxima para a div */
+    margin-left: auto; /* Centralizar horizontalmente */
+    margin-right: auto; /* Centralizar horizontalmente */
+    transition: background-color 0.3s ease;
+}
+
+div#res:hover {
+    background-color: #f0f0f0;
+    cursor: default;
+}
+
+div#res > p {
+    margin: 10px 0; /* Adicionar um pouco mais de espaço vertical entre os parágrafos */
+    text-align: left; /* Alinhar o texto dos parágrafos à esquerda para melhor leitura */
+}
+
+footer {
+    color: #777; /* Cor do texto mais suave */
+    text-align: center;
+    font-style: italic;
+    margin-top: 30px; /* Adicionar espaço acima do rodapé */
+    padding: 10px 0; /* Adicionar um pouco de espaço vertical */
+}
