@@ -26,6 +26,16 @@ function adicionar() {
         item.text = `Valor ${num.value} adicionado`
         lista.appendChild(item)
         res.innerHTML = ''
+
+        // Feedback visual
+        let feedbackDiv = document.getElementById('feedback-adicionado')
+        feedbackDiv.textContent = `Valor ${num.value} adicionado!`;
+        feedbackDiv.style.opacity = 1;
+        setTimeout(() => {
+            feedbackDiv.style.opacity = 0;
+            feedbackDiv.textContent = '';
+        }, 2000); // A mensagem desaparece após 2 segundos
+
     } else {
         window.alert('[ERRO] Valor inválido ou já inserido na lista!')
     }
