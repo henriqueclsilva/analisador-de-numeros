@@ -1,95 +1,149 @@
 body {
-    background: linear-gradient(to top, #c1dfc4, #deecdd);
-    font: normal 16pt "Segoe UI", Arial, sans-serif;
-    margin: 0; /* Manter a remoção das margens padrão */
-    display: flex; /* Manter o flex para o alinhamento vertical total */
-    justify-content: center; /* Centralizar horizontalmente */
-    align-items: center; /* Centralizar verticalmente */
-    min-height: 100vh; /* Ocupar toda a altura da tela */
-    flex-direction: column; /* Organizar os filhos (header, section, footer) em coluna */
+    background: linear-gradient(to top, #f0f2f0, #e0e0e0); /* Gradiente de fundo mais suave */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna e legível */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    color: #333; /* Cor de texto padrão mais escura */
 }
 
 header {
-    color: #333; /* Cor do texto mais escura */
+    color: #2c3e50; /* Cor do cabeçalho */
     text-align: center;
-    padding: 20px 0; /* Adicionar um pouco de espaço vertical */
-    margin-bottom: 30px; /* Espaço abaixo do cabeçalho */
+    padding: 30px 0;
+    margin-bottom: 40px;
+}
+
+section {
+    background: #fff;
+    border-radius: 12px; /* Bordas mais arredondadas */
+    padding: 30px;
+    width: 600px; /* Largura um pouco menor */
+    margin: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra mais sutil */
 }
 
 section > div {
-    display: flex; /* Habilitar o layout flexbox para os filhos */
-    align-items: center; /* Alinhar os itens verticalmente ao centro */
-    gap: 10px; /* Adicionar um pequeno espaço entre os itens */
-    margin-bottom: 15px; /* Adicionar um pouco de espaço abaixo desta linha */
-    width: 100%; /* Garantir que a div ocupe a largura total da seção */
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Aumentar um pouco o espaçamento */
+    margin-bottom: 20px; /* Mais espaço abaixo da linha de entrada */
+    width: 100%;
 }
 
-section > div > label { /* Estilizar o texto "Escreva seu Número..." se você o envolver em uma label */
-    white-space: nowrap; /* Evitar que o texto quebre para a próxima linha */
+section > div > label {
+    white-space: nowrap;
+    font-weight: bold; /* Texto da label em negrito */
 }
 
 section > div > input[type="number"] {
-    flex-grow: 1; /* Permitir que a caixa de texto se expanda para ocupar o espaço restante */
-    padding: 10px; /* Reduzir um pouco o padding para caber melhor */
-    border: 1px solid #ccc;
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ddd; /* Borda mais clara */
     border-radius: 8px;
     font-size: 16px;
-    min-width: 0; /* Permitir que o input fique menor se necessário */
+    min-width: 0;
 }
 
 section > div > input[type="button"] {
-    background-color: #5cb85c;
+    background-color: #27ae60; /* Verde mais moderno */
     color: white;
-    padding: 10px 15px; /* Reduzir um pouco o padding do botão */
+    padding: 12px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
-    white-space: nowrap; /* Evitar que o texto do botão quebre */
 }
 
 section > div > input[type="button"]:hover {
-    background-color: #4cae4c;
+    background-color: #219150; /* Verde mais escuro no hover */
+}
+
+#feedback-adicionado {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #27ae60; /* Verde para feedback positivo */
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 select#flista {
-    width: 250px; /* Aumentar a largura da lista */
+    width: 100%; /* Ocupar a largura total */
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px; /* Bordas arredondadas para a lista */
+    border: 1px solid #ddd;
+    border-radius: 8px;
     margin-top: 15px;
     font-size: 16px;
 }
 
+section > div > input[value="Remover Selecionado"],
+section > div > input[value="Limpar Lista"],
+section > div > input[value="Finalizar"] {
+    background-color: #c0392b; /* Vermelho para ações destrutivas/finalizar */
+}
+
+section > div > input[value="Remover Selecionado"]:hover,
+section > div > input[value="Limpar Lista"]:hover,
+section > div > input[value="Finalizar"]:hover {
+    background-color: #a03022; /* Vermelho mais escuro no hover */
+}
+
 div#res {
-    margin-top: 25px;
-    padding: 15px;
+    margin-top: 30px;
+    padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #eee;
     border-radius: 8px;
     font-size: 16px;
-    text-align: center; /* Centralizar o texto dentro da div */
-    max-width: 500px; /* Definir uma largura máxima para a div */
-    margin-left: auto; /* Centralizar horizontalmente */
-    margin-right: auto; /* Centralizar horizontalmente */
-    transition: background-color 0.3s ease;
-}
-
-div#res:hover {
-    background-color: #f0f0f0;
-    cursor: default;
+    text-align: left; /* Alinhar resultados à esquerda por padrão */
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 div#res > p {
-    margin: 10px 0; /* Adicionar um pouco mais de espaço vertical entre os parágrafos */
-    text-align: left; /* Alinhar o texto dos parágrafos à esquerda para melhor leitura */
+    margin: 10px 0;
 }
 
 footer {
-    color: #777; /* Cor do texto mais suave */
+    color: #777;
     text-align: center;
     font-style: italic;
-    margin-top: 30px; /* Adicionar espaço acima do rodapé */
-    padding: 10px 0; /* Adicionar um pouco de espaço vertical */
+    margin-top: 40px;
+    padding: 15px 0;
+    font-size: 0.9em;
+}
+
+/* Estilos para responsividade */
+@media screen and (max-width: 768px) {
+    section {
+        width: 90%;
+        margin: 15px;
+        padding: 20px;
+    }
+
+    section > div {
+        flex-direction: column; /* Empilhar elementos em telas menores */
+        align-items: stretch; /* Esticar os elementos para a largura total */
+    }
+
+    section > div > label {
+        margin-bottom: 5px;
+    }
+
+    section > div > input[type="number"],
+    select#flista,
+    section > div > input[type="button"] {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
 }
