@@ -19,6 +19,16 @@ function inLista(n, l) {
     }
 }
 
+function removerSelecionado() {
+    if (lista.selectedIndex != -1) { // Verifica se algum item está selecionado
+        valores.splice(lista.selectedIndex, 1); // Remove o valor do array
+        lista.removeChild(lista.options[lista.selectedIndex]); // Remove a opção da lista
+        res.innerHTML = ''; // Limpa a área de resultados para nova análise
+    } else {
+        window.alert('Selecione um valor na lista para remover.');
+    }
+}
+
 function adicionar() {
     if (isNumero(num.value) && !inLista(num.value , valores)) {
         valores.push(Number(num.value))

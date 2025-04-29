@@ -12,18 +12,20 @@
             Analisador de Números
         </h1>
     </header>
-        <section>
-            <div>
-                <label for="fnum">Escreva seu Número (entre 1 e 100):</label>
-                <input type="number" name="fnum" id="fnum">
-                <input type="button" value="Adicionar" onclick="adicionar()">
-                <div id="feedback-adicionado" style="margin-top: 5px; font-size: 0.9em; color: green; opacity: 0;"></div>
-                <br><br><select name="flista" id="flista" size="6"></select>
-                <input type="button" value="Finalizar" onclick="finalizar()">
-            </div>
-            <div id="res">
-                <br>Teste
-            </div>
+    <section>
+        <div>
+            <label for="fnum">Escreva seu Número (entre 1 e 100):</label>
+            <input type="number" name="fnum" id="fnum">
+            <input type="button" value="Adicionar" onclick="adicionar()">
+            <div id="feedback-adicionado" style="margin-top: 5px; font-size: 0.9em; color: green; opacity: 0;"></div>
+            <br><br><select name="flista" id="flista" size="6"></select><br>
+            <input type="button" value="Remover Selecionado" onclick="removerSelecionado()">
+            <input type="button" value="Finalizar" onclick="finalizar()">
+        </div>
+        <div id="res">
+            <br>Teste
+        </div>
+    </section>
     <footer>
         <p>&copy; NinjaGPT</p>
     </footer>
