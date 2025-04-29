@@ -19,6 +19,16 @@ function inLista(n, l) {
     }
 }
 
+function limparLista() {
+    if (valores.length > 0) { // Verifica se há valores na lista
+        valores = []; // Limpa o array de valores
+        lista.innerHTML = ''; // Limpa todas as opções da lista <select>
+        res.innerHTML = ''; // Limpa a área de resultados
+    } else {
+        window.alert('A lista já está vazia.');
+    }
+}
+
 function removerSelecionado() {
     if (lista.selectedIndex != -1) { // Verifica se algum item está selecionado
         valores.splice(lista.selectedIndex, 1); // Remove o valor do array
