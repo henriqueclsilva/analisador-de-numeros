@@ -4,10 +4,10 @@ let res = document.querySelector('div#res')
 let valores = []
 
 function isNumero(n) {
-    if(Number(n) >= 1 && Number(n) <= 100) {
-        return true
-    }   else {
-        return false
+    if (!isNaN(n) && Number(n) >= 1 && Number(n) <= 100) {
+        return true;
+    } else {
+        return false;
     }
 }
 
@@ -40,27 +40,32 @@ function removerSelecionado() {
 }
 
 function adicionar() {
-    if (isNumero(num.value) && !inLista(num.value , valores)) {
-        valores.push(Number(num.value))
-        let item = document.createElement('option')
-        item.text = `Valor ${num.value} adicionado`
-        lista.appendChild(item)
-        res.innerHTML = ''
+    const valorDigitado = num.value.trim(); // Remove espaços em branco extras
+
+    if (!valorDigitado) {
+        window.alert('[ERRO] Por favor, digite um número.');
+    } else if (!isNumero(valorDigitado)) {
+        window.alert('[ERRO] Valor inválido. Digite um número entre 1 e 100.');
+    } else if (inLista(valorDigitado, valores)) {
+        window.alert(`[ERRO] O valor ${valorDigitado} já foi inserido na lista!`);
+    } else {
+        valores.push(Number(valorDigitado));
+        let item = document.createElement('option');
+        item.text = `Valor ${valorDigitado} adicionado`;
+        lista.appendChild(item);
+        res.innerHTML = '';
 
         // Feedback visual
-        let feedbackDiv = document.getElementById('feedback-adicionado')
-        feedbackDiv.textContent = `Valor ${num.value} adicionado!`;
+        let feedbackDiv = document.getElementById('feedback-adicionado');
+        feedbackDiv.textContent = `Valor ${valorDigitado} adicionado!`;
         feedbackDiv.style.opacity = 1;
         setTimeout(() => {
             feedbackDiv.style.opacity = 0;
             feedbackDiv.textContent = '';
-        }, 2000); // A mensagem desaparece após 2 segundos
-
-    } else {
-        window.alert('[ERRO] Valor inválido ou já inserido na lista!')
+        }, 2000);
     }
-    num.value = ''
-    num.focus()
+    num.value = '';
+    num.focus();
 }
 
 function finalizar() {
