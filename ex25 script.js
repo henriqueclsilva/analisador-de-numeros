@@ -3,6 +3,12 @@ let lista = document.querySelector('select#flista')
 let res = document.querySelector('div#res')
 let valores = []
 
+num.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        adicionar();
+    }
+});
+
 function isNumero(n) {
     if (!isNaN(n) && Number(n) >= 1 && Number(n) <= 100) {
         return true;
