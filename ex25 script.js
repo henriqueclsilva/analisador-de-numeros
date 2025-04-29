@@ -26,27 +26,27 @@ function inLista(n, l) {
 }
 
 function limparLista() {
-    if (valores.length > 0) { // Verifica se há valores na lista
-        valores = []; // Limpa o array de valores
-        lista.innerHTML = ''; // Limpa todas as opções da lista <select>
-        res.innerHTML = ''; // Limpa a área de resultados
+    if (valores.length > 0) {
+        valores = [];
+        lista.innerHTML = '';
+        res.innerHTML = '';
     } else {
         window.alert('A lista já está vazia.');
     }
 }
 
 function removerSelecionado() {
-    if (lista.selectedIndex != -1) { // Verifica se algum item está selecionado
-        valores.splice(lista.selectedIndex, 1); // Remove o valor do array
-        lista.removeChild(lista.options[lista.selectedIndex]); // Remove a opção da lista
-        res.innerHTML = ''; // Limpa a área de resultados para nova análise
+    if (lista.selectedIndex != -1) {
+        valores.splice(lista.selectedIndex, 1);
+        lista.removeChild(lista.options[lista.selectedIndex]);
+        res.innerHTML = '';
     } else {
         window.alert('Selecione um valor na lista para remover.');
     }
 }
 
 function adicionar() {
-    const valorDigitado = num.value.trim(); // Remove espaços em branco extras
+    const valorDigitado = num.value.trim();
 
     if (!valorDigitado) {
         window.alert('[ERRO] Por favor, digite um número.');
@@ -61,7 +61,6 @@ function adicionar() {
         lista.appendChild(item);
         res.innerHTML = '';
 
-        // Feedback visual
         let feedbackDiv = document.getElementById('feedback-adicionado');
         feedbackDiv.textContent = `Valor ${valorDigitado} adicionado!`;
         feedbackDiv.style.opacity = 1;
@@ -92,7 +91,7 @@ function finalizar() {
                 menor = valores[pos]
         }
         media = soma / tot
-        res.innerHTML = '' // Limpar o conteúdo anterior
+        res.innerHTML = ''
 
         let p1 = document.createElement('p');
         p1.textContent = `Ao todo, temos ${tot} números cadastrados.`;
